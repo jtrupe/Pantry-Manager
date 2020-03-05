@@ -13,7 +13,9 @@ app.use(express.json());
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Final-Project';
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+	.then(()=> console.log("MongoDB connected successfully"))
+	.catch(err => console.log(err));
 
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`);

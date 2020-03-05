@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // app.use(routes);
+const db = require("./config/keys").mongoURI;
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Final-Project';
 

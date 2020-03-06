@@ -22,7 +22,16 @@ const userSchema = new Schema({
     pantry: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Ingredient'
+            ref: 'Ingredient',
+            stock: {
+                measure: {
+                    type: String,
+                    enum: ["g" , "mL", "units"]
+                },
+                quantity: {
+                    type: Number
+                }
+            }
         }
     ],
     favorites: []

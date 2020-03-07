@@ -1,25 +1,18 @@
-import React from "react";
-import { Nav, NavItem, NavLink } from "shards-react";
+import React from 'react';
+import { Nav, NavItem, NavLink } from 'shards-react';
 
 export default function NavExample() {
-  return (
-    <Nav>
-      <NavItem>
-        <NavLink active href="#">
-          Active
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="#">Link</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="#">Another Link</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink disabled href="#">
-          Disabled Link
-        </NavLink>
-      </NavItem>
-    </Nav>
-  );
+	return (
+		<Nav>
+			<NavItem>
+				<NavLink href="/pantry">Pantry</NavLink>
+			</NavItem>
+			<NavItem>
+				<NavLink href="/favorites">Favorites</NavLink>
+			</NavItem>
+			<NavItem>
+				<NavLink href="/user">Home</NavLink>
+			</NavItem>
+		</Nav>
+	);
 }

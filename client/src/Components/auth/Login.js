@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import { Form, FormGroup, FormInput } from "shards-react";
+import { Container, Row, Col } from "shards-react";
 class Login extends Component {
     constructor() {
         super();
@@ -37,6 +39,8 @@ class Login extends Component {
     render() {
         const { errors } = this.state;
         return (
+            <Form>
+                <FormGroup>
             <div className="container">
                 <div style={{ marginTop: "4rem" }} className="row">
                     <div className="col s8 offset-s2">
@@ -51,16 +55,16 @@ class Login extends Component {
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="input-field col s12">
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.email}
-                                    error={errors.email}
-                                    id="email"
-                                    type="email"
-                                    className={classnames("", {
-                                        invalid: errors.email || errors.emailnotfound
-                                    })}
-                                />
+                                        <FormInput id="email"
+                                            onChange={this.onChange}
+                                            value={this.state.email}
+                                            error={errors.email}
+                                            type="email"
+                                            className={classnames("", {
+                                                invalid: errors.email || errors.emailnotfound
+                                            })}
+                                 />
+                                    
                                 <label htmlFor="email">Email</label>
                                 <span className="red-text">
                                     {errors.email}
@@ -68,7 +72,7 @@ class Login extends Component {
                                 </span>
                             </div>
                             <div className="input-field col s12">
-                                <input
+                                <FormInput
                                     onChange={this.onChange}
                                     value={this.state.password}
                                     error={errors.password}
@@ -101,7 +105,9 @@ class Login extends Component {
                         </form>
                     </div>
                 </div>
-            </div>
+                    </div>
+                    </FormGroup>
+            </Form>
         );
     }
 }

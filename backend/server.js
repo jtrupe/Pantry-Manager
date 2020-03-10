@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
@@ -11,23 +12,24 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use(routes);
+app.use(routes);
 const db = require("./config/keys").mongoURI;
 
 const MONGODB_URI = process.env.MONGODB_URI ;
-
+console.log(MONGODB_URI);
 // || 'mongodb://localhost/Final-Project';
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB connected successfully"))
 	.catch(err => console.log(err));
 
-// Passport middleware
-app.use(passport.initialize());
-// Passport config
-require("./config/passport")(passport);
+// // Passport middleware
+// app.use(passport.initialize());
+// // Passport config
+// require("./config/passport")(passport);
 // Routes
-app.use("/api/users", users);
+
+// app.use("/api/users", users);
 
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`);

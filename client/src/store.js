@@ -8,7 +8,7 @@ const store = createStore(
     initialState,
     compose(
         applyMiddleware(...middleware),
-        
+
     )
 );
 export default store;

@@ -17,7 +17,7 @@ class Dashboard extends Component {
                             <b>Hello,</b> {user.name.split(" ")[0]}
                             <p className="flow-text grey-text text-darken-1">
                                 You are logged into The Recipe App
-                             
+
               </p>
                         </h4>
                         <button
@@ -42,23 +42,23 @@ class Dashboard extends Component {
 
                     <div className="col-sm-6 pt-3 add">
                         <h2 className="text-center"><u>Add Ingredients</u></h2>
-                        <input type="text" id="ingredient-search" class="form-control" placeholder="start typing to find your ingredient"/>
-                            <div className="returned-search-items mt-4"></div>
-    </div>
+                        <input type="text" id="ingredient-search" class="form-control" placeholder="start typing to find your ingredient" />
+                        <div className="returned-search-items mt-4"></div>
+                    </div>
 
-                        <div className="myIngredients col-sm-6 pt-3">
-                            <h2 className="text-center mb-4"><u>My Ingredients</u></h2>
-                            <div class="ingredient-list"></div>
-                            {/* {{#each data}} */}
-      <div className="pantry-item ml-3 font-weight">
-                                Item Name: { }
-                                <button value="{ }"
+                    <div className="myIngredients col-sm-6 pt-3">
+                        <h2 className="text-center mb-4"><u>My Ingredients</u></h2>
+                        <div class="ingredient-list"></div>
+                        {/* {{#each data}} */}
+                        <div className="pantry-item ml-3 font-weight">
+                            Item Name: {}
+                            <button value="{ }"
                                 className="pantry-item-remove text-center btn btn-outline-dark pl-2 pr-1 float-right"><span role="img" aria-label="x">❌</span></button>
-                                <hr/>
-      </div>
-                                {/* {{/ each}} */}
-    </div>
+                            <hr />
                         </div>
+                        {/* {{/ each}} */}
+                    </div>
+                </div>
             </div>
         );
     }

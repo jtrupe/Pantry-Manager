@@ -12,11 +12,13 @@ module.exports = {
         })
     },
     updateStock: (req,res) => {
+        // where: userId needed
         db.User.updateOne().then(updated => {
             res.json(updated);
         })
     },
     deleteStock: (req,res) => {
+        // where: userId needed
         db.User.updateOne().then(updatedPantry => {
             res.json(updatedPantry);
         }) 

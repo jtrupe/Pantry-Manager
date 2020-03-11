@@ -5,12 +5,14 @@ import setAuthToken from "./utilities/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-import Navbar from "./components/layout/Nav";
-import Landing from "./components/layout/Landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+import Navbar from "./Components/layout/Nav";
+import Landing from "./Components/layout/Landing";
+import Register from "./Components/auth/Register";
+import Login from "./Components/auth/Login";
+import PrivateRoute from "./Components/private-route/PrivateRoute";
+import Dashboard from "./Components/dashboard/Dashboard";
+
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth

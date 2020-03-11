@@ -22,12 +22,21 @@ const userSchema = new Schema({
     pantry: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Ingredient'
+            ref: 'Ingredient',
+            stock: {
+                measure: {
+                    type: String,
+                    enum: ["g" , "mL", "units"]
+                },
+                quantity: {
+                    type: Number
+                }
+            }
         }
     ],
     favorites: []
 })
 
-const User = mongoose.model('users', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

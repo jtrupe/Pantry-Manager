@@ -6,15 +6,6 @@ const ingredientSchema = new Schema({
     name: {
         type: String,
         required : true
-    },
-    stock: {
-        measure: {
-            type: String,
-            enum: ["g" , "mL", "units"]
-        },
-        quantity: {
-            type: Number
-        }
     }
 })
 

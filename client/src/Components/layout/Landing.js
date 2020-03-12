@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "shards-react";
-import "./style.css"
+
+import "./style.css";
+
 
 class Landing extends Component {
     render() {
@@ -24,8 +26,8 @@ class Landing extends Component {
                                 }}
                                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                             ><Button theme="primary">Register</Button>
-                                
-              </Link>
+
+                            </Link>
                         </div>
                         <div className="col s6">
                             <Link
@@ -37,8 +39,8 @@ class Landing extends Component {
                                 }}
                                 className="btn btn-large btn-flat waves-effect white black-text"
                             ><Button theme="primary">Log In</Button>
-                                
-              </Link>
+
+                            </Link>
                         </div>
                     </div>
                 </div>

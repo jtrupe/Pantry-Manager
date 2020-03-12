@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+//stretch goal: add intolerences/allergies
+// --> exclude from query results
+
 const userSchema = new Schema({
     name: {
         type: String,

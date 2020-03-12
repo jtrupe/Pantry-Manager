@@ -13,4 +13,4 @@ const Favorites = props => {
     )
 }
 
-export default UserPage;
+export default Favorites;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "shards-react";
+import { Button, Container, Row, Col } from "shards-react";
 
 import "./style.css";
 
@@ -8,15 +8,18 @@ import "./style.css";
 class Landing extends Component {
     render() {
         return (
-            <div className="container signup">
-                <div className="row">
-                    <div className="col s12 text-center">
-
+            <Container className="container signup">
+                <Row>
+                    <Col sm="12" md="4" lg="3">
+          </Col>
+                    <Col className="text-center">
+                        <h1>Recipe App</h1>
+                        <h3>Find Recipes With The Ingridents You Have On Hand</h3>
                         <br />
-                        <h3>Whats In Your Pantry?</h3>
-                        <br />
-                        <h4>Log In To Begin</h4>
-                        <div className="col s6">
+                        
+                        <br></br>
+                        <div className="login">
+                            <h4>Log In To Begin</h4>
                             <Link
                                 to="/register"
                                 style={{
@@ -25,11 +28,10 @@ class Landing extends Component {
                                     letterSpacing: "1.5px"
                                 }}
                                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                            ><Button theme="primary">Register</Button>
+                            ><Button theme="dark">Register</Button>
 
                             </Link>
-                        </div>
-                        <div className="col s6">
+                        
                             <Link
                                 to="/login"
                                 style={{
@@ -38,13 +40,15 @@ class Landing extends Component {
                                     letterSpacing: "1.5px"
                                 }}
                                 className="btn btn-large btn-flat waves-effect white black-text"
-                            ><Button theme="primary">Log In</Button>
+                            ><Button theme="dark">Log In</Button>
 
                             </Link>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                    <Col sm="12" md="4" lg="3">
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }

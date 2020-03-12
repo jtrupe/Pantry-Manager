@@ -1,3 +1,31 @@
-.signup{
+.nav{
+    background-color:hsla(0, 0%, 0%, 0.6);
+    padding: 10px;
+}
 
+.signup{
+   
+    margin-top: 60px;
+    padding: 48px;
+}
+.login{
+    padding: 10px;
+    background-color:hsla(0, 0%, 100%, 0.11);
+    border:solid black;
+    border-radius: 15px;
+    font-size: 19px;
+    text-shadow:
+  -.3px -.5px 0 rgb(255, 255, 255),
+  .5px -.5px 0 rgb(255, 255, 255),
+  -.5px .5px 0 rgb(255, 255, 255),
+  .5px .5px 0 rgb(255, 255, 255);
+}
+h1, h2, h3, h4{
+    font-family: 'Shrikhand', cursive;
+    text-shadow:
+  -1px -1px 0 rgb(255, 255, 255),
+  1px -1px 0 rgb(255, 255, 255),
+  -1px 1px 0 rgb(255, 255, 255),
+  1px 1px 0 rgb(255, 255, 255);
+    
 }

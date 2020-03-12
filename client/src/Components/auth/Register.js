@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import { Form, FormGroup, FormInput } from "shards-react";
-import { Container, Row, Col } from "shards-react";
+import { Button, Container, Row, Col } from "shards-react";
 class Register extends Component {
     constructor() {
         super();
@@ -47,21 +47,22 @@ class Register extends Component {
                 <Col sm="12" md="4" lg="4">
                     <Form>
                         <FormGroup>
-                            <Container className="container">
-                                <div className="row">
-                                    <div className="col s8 offset-s2">
-                                        <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                            <h4>
+                            <Container className="login signup">
+                                <div>
+                                    <div>
+                                        <div className="text-center">
+                                            <h3>
                                                 <b>Register</b> below
-              </h4>
+              </h3>
                                             <p className="grey-text text-darken-1">
-                                                Already have an account? <Link to="/login">Log in</Link>
+                                                <strong><u>Already have an account?</u></strong> <Link to="/login"><Button theme="dark">Log In</Button></Link>
                                             </p>
                                         </div>
                                         <form noValidate onSubmit={this.onSubmit}>
                                             <div className="input-field col s12">
-                                                <label htmlFor="name">Name</label>
+                                                
                                                 <FormInput
+                                                    placeholder="Name:"
                                                     onChange={this.onChange}
                                                     value={this.state.name}
                                                     error={errors.name}
@@ -74,8 +75,9 @@ class Register extends Component {
                                                 <span className="red-text">{errors.name}</span>
                                             </div>
                                             <div className="input-field col s12">
-                                                <label htmlFor="email">Email</label>
+                                                <br></br>
                                                 <FormInput
+                                                    placeholder="Email"
                                                     onChange={this.onChange}
                                                     value={this.state.email}
                                                     error={errors.email}
@@ -88,8 +90,9 @@ class Register extends Component {
                                                 <span className="red-text">{errors.email}</span>
                                             </div>
                                             <div className="input-field col s12">
-                                                <label htmlFor="password">Password</label>
+                                                <br></br>
                                                 <FormInput
+                                                    placeholder="Password"
                                                     onChange={this.onChange}
                                                     value={this.state.password}
                                                     error={errors.password}
@@ -102,8 +105,9 @@ class Register extends Component {
                                                 <span className="red-text">{errors.password}</span>
                                             </div>
                                             <div className="input-field col s12">
-                                                <label htmlFor="password2">Confirm Password</label>
+                                                <br></br>
                                                 <FormInput
+                                                    placeholder="Confirm Password"
                                                     onChange={this.onChange}
                                                     value={this.state.password2}
                                                     error={errors.password2}
@@ -115,18 +119,12 @@ class Register extends Component {
                                                 />
                                                 <span className="red-text">{errors.password2}</span>
                                             </div>
-                                            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                                            <div className="col s12">
                                                 <button
-                                                    style={{
-                                                        width: "150px",
-                                                        borderRadius: "3px",
-                                                        letterSpacing: "1.5px",
-                                                        marginTop: "1rem"
-                                                    }}
                                                     type="submit"
-                                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                                                    className="btn btn-large dark"
                                                 >
-                                                    Sign up
+                                                    <Button theme="dark">Sign Up</Button>
                 </button>
                                             </div>
                                         </form>

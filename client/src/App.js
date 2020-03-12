@@ -12,6 +12,8 @@ import Login from "./Components/auth/Login";
 import PrivateRoute from "./Components/private-route/PrivateRoute";
 import Dashboard from "./Components/dashboard/Dashboard";
 
+import "./style.css";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -34,6 +36,8 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
+      <div className="container">
+      <div className="body">
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -46,7 +50,9 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </Provider>
+        </Provider>
+        </div>
+      </div>
     );
   }
 }

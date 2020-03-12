@@ -9,13 +9,13 @@ class Navbar extends Component {
      
         <Nav fill>
           <NavItem>
-            <NavLink href="#">Active</NavLink>
+          <NavLink href="/dashboard">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link</NavLink>
+            <NavLink href="/search">Search A Recipe</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Another Link</NavLink>
+            <NavLink href="#">Favorites</NavLink>
           </NavItem>
           <NavItem>
             <NavLink disabled href="#">

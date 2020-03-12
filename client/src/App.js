@@ -10,6 +10,7 @@ import Landing from "./Components/layout/Landing";
 import Register from "./Components/auth/Register";
 import Login from "./Components/auth/Login";
 import PrivateRoute from "./Components/private-route/PrivateRoute";
+import Search from "./Pages/search";
 import Dashboard from "./Components/dashboard/Dashboard";
 
 import "./style.css";
@@ -44,7 +45,9 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/search" component={Search} />
+                
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

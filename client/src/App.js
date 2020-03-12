@@ -17,29 +17,6 @@ import Favorites from './Pages/favorites';
 import UserPage from './Pages/user';
 import Pantry from './Pages/pantry';
 
-<<<<<<< Updated upstream
-function App(){
-
-  return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Homepage
-          />
-        </Route>
-        <Route exact path='/user'>
-          <UserPage />
-        </Route>
-        <Route exact path='/pantry'>
-          <Pantry />
-        </Route>
-        <Route exact path='/favorites'>
-          <Favorites /> 
-        </Route>
-      </Switch>
-    </Router>
-  );
-=======
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -79,7 +56,6 @@ class App extends Component {
       </Provider>
     );
   }
->>>>>>> Stashed changes
 }
 
 export default App;

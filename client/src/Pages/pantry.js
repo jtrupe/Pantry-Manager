@@ -1,22 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-<<<<<<< Updated upstream
-import Card from '../Components/Card';
-import Navbar from '../Components/Nav';
-=======
 import spoon from '../utilities/spoonAPI';
->>>>>>> Stashed changes
 
 const Pantry = props => {
     return (
         <Navbar />
-
-        //card section pantry items
-
-<<<<<<< Updated upstream
-        //CRUD operations for pantry items
-    )
-=======
+        <>
                 <div className="title text-center mb-0 py-3">
                     <h1 className="display-4 text-center m-2">Pantry</h1>
                 </div>
@@ -46,9 +35,9 @@ const Pantry = props => {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
->>>>>>> Stashed changes
-}
+
 
 export default Pantry;

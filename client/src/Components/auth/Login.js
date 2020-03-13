@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import { Form, FormGroup, FormInput } from "shards-react";
-import { Container, Row, Col } from "shards-react";
+import { Button, Container, Row, Col } from "shards-react";
+
 class Login extends Component {
     constructor() {
         super();
@@ -46,25 +47,26 @@ class Login extends Component {
                 <Col sm="12" md="4" lg="4">
                     <Form>
                         <FormGroup>
-                            <Container className="container">
+                            <Container className="container login signup">
 
 
-                                <div style={{ marginTop: "4rem" }} className="row">
+                                <div className="row">
 
                                     <div className="col s8 offset-s2">
 
-                                        <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                            <h4>
+                                        <div className="col s12 text-center">
+                                            <h3>
                                                 <b>Login</b> below
-              </h4>
-                                            <p className="grey-text text-darken-1">
-                                                Don't have an account? <Link to="/register">Register</Link>
-                                            </p>
+              </h3>
+                                            <strong className="grey-text text-darken-1"><u>
+                                                Don't have an account?</u> <Link to="/register"><Button theme="dark">Register</Button></Link>
+                                            </strong>
                                         </div>
+                                        <br></br>
                                         <form noValidate onSubmit={this.onSubmit}>
                                             <div className="input-field col s12">
-                                                <label htmlFor="email">Email</label>
                                                 <FormInput id="email"
+                                                    placeholder="Email"
                                                     onChange={this.onChange}
                                                     value={this.state.email}
                                                     error={errors.email}
@@ -79,9 +81,10 @@ class Login extends Component {
                                                     {errors.emailnotfound}
                                                 </span>
                                             </div>
+                                            <br></br>
                                             <div className="input-field col s12">
-                                                <label htmlFor="password">Password</label>
                                                 <FormInput
+                                                    placeholder="Password"
                                                     onChange={this.onChange}
                                                     value={this.state.password}
                                                     error={errors.password}
@@ -107,7 +110,7 @@ class Login extends Component {
                                                     type="submit"
                                                     className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                                                 >
-                                                    Login
+                                                   <Button theme="dark">Log In</Button>
                 </button>
 
                                             </div>

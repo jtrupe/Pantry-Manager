@@ -11,15 +11,12 @@ class Dashboard extends Component {
     render() {
         const { user } = this.props.auth;
         return (
-            <div style={{ height: "75vh" }} className="container valign-wrapper">
+            <div className="container">
                 <div className="row">
-                    <div className="col s12 center-align">
+                    <div className="col-sm text-center">
+                    
                         <h4>
-                            <b>Hello,</b> {user.name.split(" ")[0]}
-                            <p className="flow-text grey-text text-darken-1">
-                                You are logged into The Recipe App
-
-              </p>
+                            Hello,  {user.name.split(" ")[0]}... here are your ingredients
                         </h4>
                         <button
                             style={{
@@ -29,10 +26,11 @@ class Dashboard extends Component {
                                 marginTop: "1rem"
                             }}
                             onClick={this.onLogoutClick}
-                            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                            className="btn btn-dark"
                         >
-                            Logout
+                                Logout
             </button>
+                      
                     </div>
                 </div>
           <Pantry />

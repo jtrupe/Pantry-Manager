@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class Search extends Component {
+function Search() {
+    
+    
 
-    render() {
         return (
             <div className="container">
 
@@ -20,6 +21,6 @@ class Search extends Component {
             </div>
         );
     }
-}
+
 
 export default Search; 

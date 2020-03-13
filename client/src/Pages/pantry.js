@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+
+import "./style.css";
+
+function Pantry() {
+    
 
 
-class Pantry extends Component {
-
-    render() {
         return (
             <div className="container">
 
@@ -34,7 +36,7 @@ class Pantry extends Component {
                 </div>
             </div>
         );
-    }
-}
+        }
+
 
 export default Pantry; 

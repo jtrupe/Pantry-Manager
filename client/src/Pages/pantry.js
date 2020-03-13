@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useState, useEffect,} from "react";
 
 import "./style.css";
 
+import API from '../utilities/API'
+
 function Pantry() {
-    
+    const [queryString, setQueryString] = useState("");
+    const [searchResults, setSearchResults] = ([]);
+
+    useEffect(() => {
+        if(queryString){
+            API.ingredientSearch(queryString)
+        }
+    })
 
 
         return (

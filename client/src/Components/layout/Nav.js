@@ -15,7 +15,7 @@ class Navbar extends Component {
             <NavLink href="/search">Search A Recipe</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Favorites</NavLink>
+            <NavLink href="/favorites">Favorites</NavLink>
           </NavItem>
           <NavItem>
             <NavLink disabled href="#">

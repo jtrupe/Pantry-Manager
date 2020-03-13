@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import Card from '../Components/Card';
+import Card from '../Components/layout/Card';
 import Navbar from '../Components/Nav';
 
 const Favorites = props => {
     return (
-        <Navbar />
-
+<div></div>
         //card section favorites
 
         //delete favorite button

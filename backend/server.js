@@ -23,10 +23,10 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB connected successfully"))
 	.catch(err => console.log(err));
 
-// // Passport middleware
-// app.use(passport.initialize());
-// // Passport config
-// require("./config/passport")(passport);
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
 // Routes
 
 // app.use("/api/users", users);

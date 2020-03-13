@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+//stretch goal: add intolerences/allergies
+// --> exclude from query results
+
 const userSchema = new Schema({
     name: {
         type: String,
@@ -37,6 +40,6 @@ const userSchema = new Schema({
     favorites: []
 })
 
-const User = mongoose.model('User', userSchema);
+const users = mongoose.model('users', userSchema);
 
 module.exports = User;

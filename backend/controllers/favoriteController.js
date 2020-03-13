@@ -1,10 +1,10 @@
 const db = require('../models');
 
-// SEMI PSEUDO CODE
+// SEMI PSEUDO CODE//
 module.exports = {
     findAllFavorites: (req,res) => {
-        db.User.findOne().then(favorites => {
-            res.json(favorites);
+        db.User.findOne().then(result => {
+            res.json(result.favorites);
         })
     },
     createFavorite: (req, res) => {

@@ -26,7 +26,7 @@ function Pantry() {
                         <div class="ingredient-list"></div>
                         {/* {{#each data}} */}
                         <div className="pantry-item ml-3 font-weight">
-                            Item Name: {}
+                            <strong>Item Name: {}</strong>
                             <button value="{ }"
                                 className="pantry-item-remove text-center btn btn-outline-dark pl-2 pr-1 float-right"><span role="img" aria-label="x">❌</span></button>
                             <hr />

@@ -5,7 +5,9 @@ import Navbar from '../Components/Nav';
 
 const Favorites = props => {
     return (
-<div></div>
+        <div>
+            <Card />
+</div>
         //card section favorites
 
         //delete favorite button

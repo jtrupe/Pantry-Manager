@@ -29,7 +29,7 @@ const userSchema = new Schema({
             stock: {
                 measure: {
                     type: String,
-                    enum: ["g" , "mL", "units"]
+                    enum: ["g", "mL", "units"]
                 },
                 quantity: {
                     type: Number
@@ -40,6 +40,6 @@ const userSchema = new Schema({
     favorites: []
 })
 
-const users = mongoose.model('users', userSchema);
+const User = mongoose.model('users', userSchema);
 
 module.exports = User;

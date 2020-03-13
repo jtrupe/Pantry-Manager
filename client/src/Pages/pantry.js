@@ -10,7 +10,9 @@ function Pantry() {
 
     useEffect(() => {
         if(queryString){
-            API.ingredientSearch(queryString)
+            API.ingredientSearch(queryString).then(response => {
+                setSearchResults = response
+            })
         }
     })
 

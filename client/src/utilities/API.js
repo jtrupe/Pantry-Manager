@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 export default {
+	getLoggedInUser: () => {
+		return axios.get('/api/users/login');
+	},
 	findFavorites: (userId) => {
 		return axios.get(`/api/favorites/${userId}`);
 	},

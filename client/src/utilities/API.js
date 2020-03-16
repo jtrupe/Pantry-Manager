@@ -1,6 +1,12 @@
 import axios from 'axios';
 
 export default {
+	getUser: (userId) => {
+		return axios.get(`/api/users/${userId}`);
+	},
+	findOrCreateIngredient: (userId) => {
+			return axios.post(`/api/pantry/${userId}`);
+	},
 	findFavorites: (userId) => {
 		return axios.get(`/api/favorites/${userId}`);
 	},
@@ -10,8 +16,8 @@ export default {
 	deleteFavorite: (userId) => {
 		return axios.put(`/api/favorites/delete/${userId}`);
 	},
-	getPantry: () => {
-		return axios.get('/api/pantry');
+	getAllIngredients: () => {
+		return axios.get(`/api/pantry/`);
 	},
 	updatePantryItem: (userId) => {
 		return axios.put(`/api/pantry/update/${userId}`);

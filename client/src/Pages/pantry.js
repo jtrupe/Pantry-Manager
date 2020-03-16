@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import "./style.css";
 
-function Pantry() {
-    
+import API from '../utilities/API';
+
+function Pantry(props) {
+    //   const [userData, setUserData] = useState({ id: props.userId, pantry:[], favorites:[]})
+
+    //     useEffect(() => {
+    //         API.getUser(userData.id).then
+    //     })
 
 
         return (

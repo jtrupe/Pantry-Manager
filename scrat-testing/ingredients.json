@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e6c177e1c9d4400003acaab"},"name":"flour"}
+{"_id":{"$oid":"5e6c17ea1c9d4400003acaac"},"name":"butter"}
+{"_id":{"$oid":"5e6c18061c9d4400003acaad"},"name":"eggs"}
+{"_id":{"$oid":"5e6c18171c9d4400003acaae"},"name":"chocolate"}

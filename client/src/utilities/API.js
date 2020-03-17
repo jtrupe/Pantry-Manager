@@ -15,7 +15,7 @@ export default {
 	// },
 	// deleteFavorite: (userId) => {
 	// 	return axios.put(`/api/favorites/delete/${userId}`);
-	},
+
 	getAllIngredients: () => {
 		return axios.get(`/api/pantry/`);
 	},

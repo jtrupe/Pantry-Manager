@@ -25,16 +25,16 @@ export default {
 	// deletePantryItem: (userId) => {
 	// 	return axios.put(`/api/pantry/delete/${userId}`);
 	// },
-	ingredientSearch: () => {
-		return axios.get('/api/spoon/ingredient-search');
+	ingredientSearch: (query) => {
+		return axios.get(`/api/spoon/ingredient-search/${query}`);
 	},
-	recipeSearchRaw: () => {
+	recipeSearchRaw: (recipeName, number) => {
 		return axios.get('/api/spoon/recipe-search');
 	},
-	recipeSearchByIngredient: () => {
+	recipeSearchByIngredient: (ingredientArray, number) => {
 		return axios.get('/api/spoon/recipe-by-ingredient');
 	},
-	getRecipeData: () => {
+	getRecipeData: (recipeId) => {
 		return axios.get('/api/spoon/recipe/data');
 	}
 };

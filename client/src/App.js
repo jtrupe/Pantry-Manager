@@ -39,7 +39,8 @@ if (localStorage.jwtToken) {
 class App extends Component {
 
   state = {
-    recipes: []
+    recipes: [],
+    
   }
 
   getRecipe = async (e) => {
@@ -47,12 +48,13 @@ class App extends Component {
     e.preventDefault();
     const API_key = "dc3faa92414140e88e09223ce1d27439"
     
-    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}/information?&number=6&includeNutrition=false&apiKey=${API_key}`);
+    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=6&apiKey=${API_key}`);
 
     const data = await api_call.json();
     this.setState({ recipes: data.results });
     console.log(this.state.recipes);
   }
+ 
   render() {
     return (
       <div className="container">

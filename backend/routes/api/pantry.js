@@ -4,7 +4,7 @@ const pantryController = require('../../controllers/pantryController');
 app.route('/')
     .get(pantryController.findAllIngriedients)
 
-app.route('/:userId')
+app.route('/:userId/:ingredient')
     .post(pantryController.findOrCreate);
 
 // app.route('/find').get(pantryController.findByName);

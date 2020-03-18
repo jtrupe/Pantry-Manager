@@ -9,9 +9,10 @@ module.exports = {
 	findOrCreate: (req, res) => {
 		// const name = req.body.ingredient;
 		const userId = req.params.userId;
+		const ingredient = req.params.ingredient;
 		console.log(userId);
 		db.Ingredient
-			.create({ ingredient: req.body.ingredient })
+			.create({ ingredient: req.params.ingredient })
 			.then((created) => {
 				console.log('Creating new Ingredient');
 				console.log(created);
@@ -23,7 +24,7 @@ module.exports = {
 			.catch(() => {
 				console.log('Item already exists in DB... finding now');
 				db.Ingredient
-					.findOne({ ingredient: req.body.ingredient })
+					.findOne({ ingredient: req.params.ingredient })
 					.then((found) => {
 						console.log(found);
 						const updatedData = { $push: { ingredients: found._id } };

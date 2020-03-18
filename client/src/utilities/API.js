@@ -4,8 +4,8 @@ export default {
 	getUser: (userId) => {
 		return axios.get(`/api/users/${userId}`);
 	},
-	findOrCreateIngredient: (userId) => {
-			return axios.post(`/api/pantry/${userId}`);
+	findOrCreateIngredient: (userId, ingredient) => {
+			return axios.post(`/api/pantry/${userId}/${ingredient}`);
 	},
 	// findFavorites: (userId) => {
 	// 	return axios.get(`/api/favorites/${userId}`);

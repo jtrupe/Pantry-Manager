@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Form, FormInput, FormGroup, Button } from 'shards-react';
 
 import './style.css';
 import API from '../utilities/API';
@@ -16,7 +17,6 @@ function Pantry(props) {
 				let mappedPantry = ingredientsIds.map((i) => i.ingredient);
 				let mappedFavorites = currentUser.data.favorites.map((i) => i);
 				console.log(mappedPantry);
-				//fux here
 				setUserData((currentState) => ({ ...currentState, pantry: mappedPantry, favorites: mappedFavorites }));
 			});
 		},
@@ -41,6 +41,13 @@ function Pantry(props) {
 	);
 	console.log(searchResults);
 
+	const handleAddItem = (item) => {
+		API.findOrCreateIngredient(userData.id, item).then((results) => {
+			console.log(results)
+			
+		});
+	};
+
 	return (
 		<div className="container">
 			<div className="title text-center mb-0 py-3">
@@ -62,12 +69,14 @@ function Pantry(props) {
 					<div className="returned-search-items mt-4" />
 					{searchResults.map((i) => {
 						return (
-							<div className="pantry-item ml-3 font-weight">
+							<div key={i.id} className="pantry-item ml-3 font-weight">
 								<strong>Item: {i.name}</strong>
-								<button onClick={()=>{
-                                    console.log(i.name)
-                                }}
-									value= ""
+								<button
+									onClick={() => {
+										handleAddItem(i.name);
+										
+									}}
+									value={i.name}
 									className="pantry-item-remove text-center btn btn-outline-dark pl-2 pr-1 float-right"
 								>
 									<span role="img" aria-label="+">

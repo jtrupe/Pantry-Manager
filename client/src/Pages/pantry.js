@@ -6,9 +6,11 @@ import API from '../utilities/API';
 import axios from 'axios';
 // console.log(process.env.REACT_APP_SPOONACULAR_KEY);
 function Pantry(props) {
+	console.log(props)
 	const [ userData, setUserData ] = useState({ id: props.userId, pantry: [], favorites: [] });
 	const [ queryString, setQueryString ] = useState('');
 	const [ searchResults, setSearchResults ] = useState([]);
+	const [isUpdating, setIsUpdating] = useState(false);
 
 	useEffect(
 		() => {
@@ -18,9 +20,10 @@ function Pantry(props) {
 				let mappedFavorites = currentUser.data.favorites.map((i) => i);
 				console.log(mappedPantry);
 				setUserData((currentState) => ({ ...currentState, pantry: mappedPantry, favorites: mappedFavorites }));
+				setIsUpdating((false));
 			});
 		},
-		{ userData }
+		{isUpdating}
 	);
 	console.log(userData);
 
@@ -41,12 +44,19 @@ function Pantry(props) {
 	);
 	console.log(searchResults);
 
+	//furhter dev: combine handle add/remove 
 	const handleAddItem = (item) => {
 		API.findOrCreateIngredient(userData.id, item).then((results) => {
-			console.log(results)
-			
-		});
+			console.log(results);
+			});
+			setIsUpdating(true)
 	};
+
+	const handleRemoveItem = (item) =>{
+		API.deletePantryItem(userData.id, item).then(results=>{
+			console.log(results);
+		})
+	}
 
 	return (
 		<div className="container">
@@ -99,6 +109,9 @@ function Pantry(props) {
 							<div className="pantry-item ml-3 font-weight">
 								<strong>Item Name: {i}</strong>
 								<button
+								onClick = {()=>{
+									handleRemoveItem(i)
+								}}
 									value="{ }"
 									className="pantry-item-remove text-center btn btn-outline-dark pl-2 pr-1 float-right"
 								>

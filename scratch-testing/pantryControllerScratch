@@ -1,0 +1,121 @@
+// updateStock: (req,res) => {
+//     let userId = req.body.userId;
+//     let ingredient = req.body.ingredient;
+//     let newStock = {
+//         measure: req.body.measure,
+//         quantity: req.body.quantity
+//     }
+//     // fix logic here
+//     db.User.updateOne({_id: userId}, {
+
+//     }).then(updated => {
+//         res.json(updated);
+//     })
+// },
+// // should be similar to method above
+// deleteStock: (req,res) => {
+//     // where: userId needed
+//     db.User.updateOne().then(updatedPantry => {
+//         res.json(updatedPantry);
+//     })
+// }
+
+//     , (err, ingr) => {
+// 	if(err){
+//         console.log(name);
+//         console.log(err);
+// 	    db.Ingredient.create({ingredient : name}).then(newIng => res.json(newIng))
+// 	}
+// 	else{
+// 	    res.json(ingr);
+//     }
+// });
+
+// if (ingr !== null) {
+// 	console.log('Ingredient already in DB');
+// 	res.json(ingr);
+// } else {
+// 	console.log(name);
+// 	db.Ingredient.create({ ingredient: name }).then(newIng => res.json(newIng))
+// }
+
+
+
+		// const ingredients = await ingredientQuery;
+		// let created = {};
+
+		// async function createAwaitFind() {
+		// 	const findFirst = await findByName();
+		// 	// console.log(findFirst);
+		// 	if (findFirst) {
+		// 		createNew();
+		// 	}
+		// }
+
+
+// const findOrCreate = async function() {
+//     let created = await createNew();
+//     console.log(created);
+//     if (created) {
+//         console.log('created new item in DB');
+//         res.json(created);
+//     }
+// };
+
+// const findByName = function() {
+//     return db.Ingredient
+//         .findOne({ ingredient: name })
+//         .exec()
+//         .then((ingr) => {
+//             if (ingr !== null) {
+//                 console.log('item found in DB');
+//                 return ingr;
+//             }
+//         })
+//         .catch((err) => console.log(err));
+// };
+
+// const createNew = function() {
+//     return db.Ingredient
+//         .create({ ingredient: name })
+//         .exec()
+//         .then((err, newIng) => {
+//             if (err) {
+//                 console.log('DB item already exists');
+//                 return false;
+//             } else {
+//                 return newIng;
+//             }
+//         })
+//         .catch((err) => console.log(err));
+// };
+
+// findOrCreate();
+
+// const query = Ingredient.find();
+// const docs = await query;
+// // res.json(docs);
+
+// query
+//     .find({ ingredient: name })
+//     .then((found) => {
+//         console.log(found);
+//         createdOrFoundIngredient = found;
+//         res.json(found);
+//     })
+//     .then(            );
+
+// Ingredient.find({ingredient : name}).then(response => {
+//     let newName = response.ingredient || name;
+//     return Ingredient.create({ingredient: newName});
+// })
+// .catch((err) => {
+// 	console.log('DB item already exists');
+// });
+
+findByName: (req, res) => {
+		let name = req.body.name;
+		db.Ingredient.find({ ingredient: name }).then(result=> {
+            console.log (result);
+        });
+	},

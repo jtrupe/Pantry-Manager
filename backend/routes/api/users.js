@@ -1,15 +1,22 @@
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
+const app= require('express').Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const userController = require('../../controllers/userController');
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
 
-router.post("/register", (req, res) => {
+app.route('/:userId')
+    .get(userController.getUser)
+    // .put(userController.updatePantry)
+// app.route()
+
+app.route('/register').post( (req, res) => {
     // Form validation
     const { errors, isValid } = validateRegisterInput(req.body);
     // Check validation
@@ -39,7 +46,7 @@ router.post("/register", (req, res) => {
         }
     });
 });
-router.post("/login", (req, res) => {
+app.route("/login").post((req, res) => {
     // Form validation
     const { errors, isValid } = validateLoginInput(req.body);
     // Check validation
@@ -86,4 +93,4 @@ router.post("/login", (req, res) => {
     });
 });
 
-module.exports = router;
+module.exports = app;

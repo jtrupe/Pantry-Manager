@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const axios = require('axios');
 module.exports = {
     // apiKey: () => process.env.SPOONACULAR_KEY;

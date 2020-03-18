@@ -30,10 +30,10 @@ class Dashboard extends Component {
                         >
                                 Logout
             </button>
-                      
+            {/* <button onClick={() => console.log(user)}> store</button> */}
                     </div>
                 </div>
-          <Pantry />
+          <Pantry userId={user.id}/>
             </div>
         );
     }

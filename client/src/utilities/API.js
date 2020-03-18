@@ -1,34 +1,40 @@
 import axios from 'axios';
 
 export default {
-	findFavorites: (userId) => {
-		return axios.get(`/api/favorites/${userId}`);
+	getUser: (userId) => {
+		return axios.get(`/api/users/${userId}`);
 	},
-	addFavorite: (userId) => {
-		return axios.put(`/api/favorites/${userId}`);
+	findOrCreateIngredient: (userId) => {
+			return axios.post(`/api/pantry/${userId}`);
 	},
-	deleteFavorite: (userId) => {
-		return axios.put(`/api/favorites/delete/${userId}`);
+	// findFavorites: (userId) => {
+	// 	return axios.get(`/api/favorites/${userId}`);
+	// },
+	// addFavorite: (userId) => {
+	// 	return axios.put(`/api/favorites/${userId}`);
+	// },
+	// deleteFavorite: (userId) => {
+	// 	return axios.put(`/api/favorites/delete/${userId}`);
+
+	getAllIngredients: () => {
+		return axios.get(`/api/pantry/`);
 	},
-	getPantry: () => {
-		return axios.get('/api/pantry');
+	// updatePantryItem: (userId) => {
+	// 	return axios.put(`/api/pantry/update/${userId}`);
+	// },
+	// deletePantryItem: (userId) => {
+	// 	return axios.put(`/api/pantry/delete/${userId}`);
+	// },
+	ingredientSearch: (query) => {
+		return axios.get(`/api/spoon/ingredient-search/${query}`);
 	},
-	updatePantryItem: (userId) => {
-		return axios.put(`/api/pantry/update/${userId}`);
-	},
-	deletePantryItem: (userId) => {
-		return axios.put(`/api/pantry/delete/${userId}`);
-	},
-	ingredientSearch: () => {
-		return axios.get('/api/spoon/ingredient-search');
-	},
-	recipeSearchRaw: () => {
+	recipeSearchRaw: (recipeName, number) => {
 		return axios.get('/api/spoon/recipe-search');
 	},
-	recipeSearchByIngredient: () => {
+	recipeSearchByIngredient: (ingredientArray, number) => {
 		return axios.get('/api/spoon/recipe-by-ingredient');
 	},
-	getRecipeData: () => {
+	getRecipeData: (recipeId) => {
 		return axios.get('/api/spoon/recipe/data');
 	}
 };

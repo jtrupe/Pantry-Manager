@@ -7,6 +7,9 @@ export default {
 	findOrCreateIngredient: (userId, ingredient) => {
 			return axios.post(`/api/pantry/${userId}/${ingredient}`);
 	},
+	deletePantryItem: (userId, ingredient) => {
+		return axios.put(`/api/pantry/${userId}/${ingredient}`);
+	},
 	// findFavorites: (userId) => {
 	// 	return axios.get(`/api/favorites/${userId}`);
 	// },
@@ -22,9 +25,8 @@ export default {
 	// updatePantryItem: (userId) => {
 	// 	return axios.put(`/api/pantry/update/${userId}`);
 	// },
-	// deletePantryItem: (userId) => {
-	// 	return axios.put(`/api/pantry/delete/${userId}`);
-	// },
+
+	
 	ingredientSearch: (query) => {
 		return axios.get(`/api/spoon/ingredient-search/${query}`);
 	},

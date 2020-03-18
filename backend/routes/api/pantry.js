@@ -5,7 +5,9 @@ app.route('/')
     .get(pantryController.findAllIngriedients)
 
 app.route('/:userId/:ingredient')
-    .post(pantryController.findOrCreate);
+    .post(pantryController.findOrCreate)
+    .put(pantryController.removeItemFromUser)
+
 
 // app.route('/find').get(pantryController.findByName);
 // app.route('/create')

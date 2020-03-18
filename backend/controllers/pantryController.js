@@ -25,14 +25,33 @@ module.exports = {
 				console.log('Item already exists in DB... finding now');
 				db.Ingredient
 					.findOne({ ingredient: req.params.ingredient })
-					.then((found) => {
-						console.log(found);
+					.then(async(found) => {
+						// console.log(found);
 						const updatedData = { $push: { ingredients: found._id } };
-						db.User
-							.findOneAndUpdate({ unique: true }, { _id: userId }, updatedData, { new: true })
+						let userPantry = await db.User.findById({_id: userId}).then(results=> results.ingredients);
+						// console.log("Current User", userPantry);
+						let pantryContainsItem = userPantry.includes(found._id)
+						// console.log(pantryContainsItem);
+						if(!pantryContainsItem){
+							db.User
+							.findOneAndUpdate({ _id: userId }, { $push: { ingredients: found._id } }, { new: true })
 							.then((result) => res.json(result));
+						} else{
+							console.log("Item already in user pantry");
+						}
+					
 					})
 					.catch((result) => res.json('Item in user pantry already'));
 			});
+	},
+	removeItemFromUser: (req,res) =>{
+		db.User.findOne({_id: req.params.userId}).populate("ingredients").then(user=>{
+			const oldPantry = user.ingredients;
+			const newPantry= oldPantry.filter((i)=>i.ingredient !== req.params.ingredient);
+			db.User.update({_id: req.params.userId},{ingredients: newPantry}).then(result =>{
+				console.log("Item removed from pantry");
+				res.json(result);
+			})
+		})
 	}
 };

@@ -1,26 +1,56 @@
 import React from "react";
+import API from "../utilities/API"
 
 
-function Search() {
-    
-    
+function Search(props) {
 
-        return (
-            <div className="container">
 
-                <h3 class="text-center my-3">Search by Recipe Name</h3>
+    console.log(props);
 
-                <div class="search-recipe-name-div mt-3">
-                    <div class="input-group mb-3 ">
-                        <input type="text" class="form-control border border-dark" id="recipe-name" placeholder="Recipe Name" aria-describedby="button-addon2" />
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-dark" type="submit" id="search-recipe-name">Search</button>
-                        </div>
-                    </div>
-                </div>
+    return (
+        <div className="container">
+
+            <h3 className="text-center my-3">Search by Recipe Name</h3>
+
+            <div className="text-center search-recipe-name-div mt-3">
+
+
+                <form onSubmit={props.getRecipe} style={{ marginBottom:"2rem"}}>
+
+                    <input type="text" name="recipeName" />
+
+                    <button>Search</button>
+
+                </form>
             </div>
-        );
-    }
+            <div className="container">
+                <div className="row">
+                   
+                    {props.recipes.map((recipe) => {
+                console.log(recipe.id)
+                return (
+                    <div key={recipe.id} className="col-md-4">
+                        <div className="recipe__box">
+                            <div >
+                                
+                        <img className="recipe__box-img"
+                            src={"https://spoonacular.com/recipeImages/" + recipe.imageUrls}
+                            alt="recipies" />
+                        <div className="recipe__text"> <h5>{recipe.title}</h5></div>
+                    </div>
+                    </div>
+                    </div>
+                )
+            })}
+                        
+                        
+                    </div>
+            </div>
+        </div>
+
+
+    );
+}
 
 
 export default Search; 

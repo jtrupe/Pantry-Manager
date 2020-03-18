@@ -15,6 +15,7 @@ import Favorites from "./Pages/favorites";
 import Dashboard from "./Components/dashboard/Dashboard";
 
 import "./style.css";
+import BasicCardExample from "./Components/layout/Card";
 
 
 // Check for token to keep user logged in
@@ -36,26 +37,44 @@ if (localStorage.jwtToken) {
   }
 }
 class App extends Component {
+
+  state = {
+    recipes: [],
+    
+  }
+
+  getRecipe = async (e) => {
+    const recipeName = e.target.elements.recipeName.value;
+    e.preventDefault();
+    const API_key = "dc3faa92414140e88e09223ce1d27439"
+    
+    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=6&apiKey=${API_key}`);
+
+    const data = await api_call.json();
+    this.setState({ recipes: data.results });
+    console.log(this.state.recipes);
+  }
+ 
   render() {
     return (
       <div className="container">
-      <div className="body">
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-             <Route exact path="/login" component={Login} />
-                <Route exact path="/search" component={Search} />
+        <div className="body">
+          <Provider store={store}>
+            <Router>
+              <div className="App">
+                <Navbar />
+
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/search" render={(props) => <Search {...props} getRecipe={this.getRecipe} recipes={this.state.recipes} />} />
                 <Route exact path="/favorites" component={Favorites} />
-                
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
-          </div>
-        </Router>
-        </Provider>
+                <Switch>
+                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                </Switch>
+              </div>
+            </Router>
+          </Provider>
         </div>
       </div>
     );

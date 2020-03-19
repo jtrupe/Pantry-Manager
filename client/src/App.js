@@ -64,13 +64,13 @@ class App extends Component {
             <Router>
               <div className="App">
                 <Navbar />
-                <Switch>
+               
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/search" render={(props) => <Search {...props} getRecipe={this.getRecipe} recipes={this.state.recipes} />} />
                 <Route exact path="/favorites" component={Favorites} />
-                
+                <Switch>
                   <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 </Switch>
               </div>

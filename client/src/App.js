@@ -46,9 +46,10 @@ class App extends Component {
   getRecipe = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    const API_key = "dc3faa92414140e88e09223ce1d27439"
+   
     
-    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=6&apiKey=${API_key}`);
+    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=6&apiKey=${process
+      .env.REACT_APP_SPOONACULAR_KEY}`);
 
     const data = await api_call.json();
     this.setState({ recipes: data.results });

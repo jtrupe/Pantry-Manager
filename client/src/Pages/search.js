@@ -1,7 +1,5 @@
 import React from 'react';
 import { FormCheckbox } from 'shards-react'
-// import { faHeart} from "free-solid-svg-icons";
-import { FontAwesomeIcon } from 'react-fontawesome';
 import API from '../utilities/API';
 import axios from 'axios';
 

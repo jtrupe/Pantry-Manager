@@ -19,7 +19,7 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://admin:7KZaMWL%4inP@ds0
 console.log(MONGODB_URI);
 
 if(process.env.NODE_ENV === "production"){
-	app.use(express.static('client/build'));
+	app.use(express.static("client/build"));
 }
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB connected successfully"))

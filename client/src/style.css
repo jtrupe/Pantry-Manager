@@ -1,6 +1,6 @@
 .body{
     background-image: url("./images/background2.jpg");
-    object-fit: cover; 
+    object-fit: fill; 
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;

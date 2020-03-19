@@ -16,6 +16,7 @@ function Pantry(props) {
 	const [ searchResults, setSearchResults ] = useState([]);
 	const [ isUpdating, setIsUpdating ] = useState(false);
 	const [ randomIngs, setRandomIngs ] = useState([]);
+	const [ searchIngs, setSearchIngs ] = useState([]);
 
 	//Fisher-Yates shuffle
 	function shuffle(array) {
@@ -68,7 +69,6 @@ function Pantry(props) {
 		[ queryString ]
 	);
 	console.log(searchResults);
-
 	//furhter dev: combine handle add/remove
 	const handleAddItem = (item) => {
 		API.findOrCreateIngredient(userData.id, item).then((results) => {
@@ -84,6 +84,14 @@ function Pantry(props) {
 		setIsUpdating(true);
 	};
 
+	const handleChange= (item) => {
+		console.log(item)
+		// console.log(searchIngs)
+		// let oldIngs = searchIngs;
+		// let newIngs = oldIngs.push(item);
+		// setSearchIngs(currentState => newIngs)
+	  }
+	  console.log(searchIngs)
 	return (
 		<div className="container">
 			<div className="title text-center mb-0 py-3">
@@ -133,8 +141,13 @@ function Pantry(props) {
 					{userData.pantry.map((i) => {
 						return (
 							<div className="pantry-item ml-3 font-weight" style={ingredientStyle}>
-								
-								<FormCheckbox style={{align: "left"}}>
+								<span>
+								<FormCheckbox 
+									value= {i}
+									onChange={(e,value)=>{
+										handleChange(i)
+									}}
+									>
 								<strong>{i}</strong>
 									<Button
 										theme="dark"
@@ -149,10 +162,14 @@ function Pantry(props) {
 										</span>
 									</Button>
 								</FormCheckbox>
+								</span>
 								<hr />
 							</div>
 						);
 					})}
+					<Button theme="light">
+										Cook!
+									</Button>
 				</div>
 			</div>
 

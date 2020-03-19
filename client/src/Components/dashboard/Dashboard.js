@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Pantry from "../../../src/Pages/pantry"
+import Search from "../../../src/Pages/search"
 class Dashboard extends Component {
     onLogoutClick = e => {
         e.preventDefault();

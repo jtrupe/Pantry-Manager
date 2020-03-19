@@ -1,7 +1,6 @@
 .ingredient-list{
     background-color:hsla(0, 0%, 100%, 0.11);
 }
-
 body {
   background:#f3f3f3;
 }
@@ -14,6 +13,7 @@ img {
 button:focus {
   outline: none;
 }
+
 
 .App {
   text-align: center;

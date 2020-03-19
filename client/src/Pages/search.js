@@ -1,11 +1,14 @@
-import React from 'react';
-import {FormCheckbox} from 'shards-react'
+
+import { FormCheckbox } from 'shards-react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 // import { faHeart} from "free-solid-svg-icons";
 import { FontAwesomeIcon } from 'react-fontawesome';
 import API from '../utilities/API';
 
 function Search(props) {
-    
+	
+	
 	console.log(props);
 
 	return (
@@ -22,26 +25,44 @@ function Search(props) {
 			</div>
 			<div className="container">
 				<div className="row">
-					{props.recipes.map((recipe) => {
+						{props.recipes.map((recipe) => {
+							axios
+								.get(
+									`https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=false&apiKey=${process
+										.env.REACT_APP_SPOONACULAR_KEY
+						}`
+								)
+								.then((results) => {
+									
+									
+									console.log(results.data.sourceUrl);
+								
 						console.log(recipe.id);
 						return (
 							<div key={recipe.id} className="col-md-4">
 								<div className="recipe__box">
+									
 									<div>
+										<h5>{results.data.sourceUrl}</h5>
+										<a href={results.data.sourceUrl}>
 										<img
 											className="recipe__box-img"
-											src={'https://spoonacular.com/recipeImages/' + recipe.imageUrls}
+												src={'https://spoonacular.com/recipeImages/' + recipe.imageUrls} onClick={results.data.sourceUrl} 
 											alt="recipies"
 										/>
+										</a>
+										
 										<div className="recipe__text">
 											{' '}
 											<h5>{recipe.title}</h5>
 										</div>
-										<button>Favorite</button>
+										<button >Favorite</button>
 									</div>
+									
 								</div>
 							</div>
 						);
+								});
 					})}
 				</div>
 			</div>
@@ -64,7 +85,8 @@ function Search(props) {
                     return (
                         <div key={recipe.id} className="col-md-4">
                             <div className="recipe__box">
-                                <div>
+								<div>
+									
                                     <img
                                         className="recipe__box-img"
                                         src={'https://spoonacular.com/recipeImages/' + recipe.imageUrls}

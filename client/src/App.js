@@ -48,7 +48,7 @@ class App extends Component {
     e.preventDefault();
    
     
-    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=6&apiKey=${process
+    const api_call = await fetch(`https://api.spoonacular.com/recipes/search?query=${recipeName}?&number=3&apiKey=${process
       .env.REACT_APP_SPOONACULAR_KEY}`);
 
     const data = await api_call.json();

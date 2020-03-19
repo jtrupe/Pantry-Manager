@@ -15,9 +15,8 @@ app.use(express.json());
 app.use(routes);
 const db = require("./config/keys").mongoURI;
 
-const MONGODB_URI = process.env.MONGODB_URI ;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://admin:7KZaMWL%4inP@ds015849.mlab.com:15849/heroku_m1kcxm85";
 console.log(MONGODB_URI);
-// || 'mongodb://localhost/Final-Project';
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB connected successfully"))
